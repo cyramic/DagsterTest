@@ -228,20 +228,20 @@ python-dateutil = "*"
 
 [[package]]
 name = "dagit"
-version = "1.3.6"
+version = "1.3.7"
 description = "Web UI for dagster."
 category = "main"
 optional = false
 python-versions = "*"
 files = [
-    {file = "dagit-1.3.6-py3-none-any.whl", hash = "sha256:5ae8fd2217c3cf7471ac93bf758a29b4716988da1418db67ca1286eb42eda0c0"},
-    {file = "dagit-1.3.6.tar.gz", hash = "sha256:8867c19f4f3fe9ddcb1aa01badfd4ea39ace49b20987b64ec6309a74e55fa537"},
+    {file = "dagit-1.3.7-py3-none-any.whl", hash = "sha256:124dd68e3f3159948bb6d4e97074db4ffe567b6c61b0634794b02a3eb64cdb6b"},
+    {file = "dagit-1.3.7.tar.gz", hash = "sha256:91a4a763e9e1213562c0f7a59b64df2998142db37cd78e9026348bc04651e485"},
 ]
 
 [package.dependencies]
 click = ">=7.0,<9.0"
-dagster = "1.3.6"
-dagster-graphql = "1.3.6"
+dagster = "1.3.7"
+dagster-graphql = "1.3.7"
 starlette = "*"
 uvicorn = {version = "*", extras = ["standard"]}
 
@@ -251,14 +251,14 @@ test = ["starlette[full]"]
 
 [[package]]
 name = "dagster"
-version = "1.3.6"
+version = "1.3.7"
 description = "The data orchestration platform built for productivity."
 category = "main"
 optional = false
 python-versions = "*"
 files = [
-    {file = "dagster-1.3.6-py3-none-any.whl", hash = "sha256:81d31192566c34f7e314091d585e15c899082a3078f92d495b9de59a8da0073a"},
-    {file = "dagster-1.3.6.tar.gz", hash = "sha256:fe6c390815eaa0cf7bd5cf3f8de2934eb5471c640b23c7a7e7b5e09baa6bd458"},
+    {file = "dagster-1.3.7-py3-none-any.whl", hash = "sha256:2ce0e148bd6a35a8b7c2b7dc46d870bf98757d264869f1cbe7c14a49d030cdb1"},
+    {file = "dagster-1.3.7.tar.gz", hash = "sha256:6f00ff6cb991c26c0052bbafeef8f28354f0c2a0084b385eae406f1b28275adc"},
 ]
 
 [package.dependencies]
@@ -271,7 +271,10 @@ grpcio = [
     {version = ">=1.44.0,<1.48.0", markers = "python_version < \"3.11\""},
     {version = ">=1.44.0", markers = "python_version >= \"3.11\""},
 ]
-grpcio-health-checking = ">=1.44.0"
+grpcio-health-checking = [
+    {version = ">=1.44.0,<1.48.0", markers = "python_version < \"3.11\""},
+    {version = ">=1.44.0", markers = "python_version >= \"3.11\""},
+]
 Jinja2 = "*"
 packaging = ">=20.9"
 pendulum = "*"
@@ -300,40 +303,40 @@ docker = ["docker"]
 mypy = ["mypy (==0.991)"]
 pyright = ["pandas-stubs", "pyright (==1.1.298)", "types-PyYAML", "types-backports", "types-certifi", "types-chardet", "types-croniter", "types-cryptography", "types-mock", "types-paramiko", "types-pkg-resources", "types-pyOpenSSL", "types-python-dateutil", "types-pytz", "types-requests", "types-simplejson", "types-six", "types-sqlalchemy (==1.4.53.34)", "types-tabulate", "types-toml", "types-tzlocal"]
 ruff = ["ruff (==0.0.255)"]
-test = ["buildkite-test-collector", "docker", "grpcio-tools (>=1.44.0)", "mock (==3.0.5)", "objgraph", "pytest (==7.0.1)", "pytest-cov (==2.10.1)", "pytest-dependency (==0.5.1)", "pytest-mock (==3.3.1)", "pytest-rerunfailures (==10.0)", "pytest-runner (==5.2)", "pytest-xdist (==2.1.0)", "responses", "snapshottest (==0.6.0)", "tox (==3.25.0)", "yamllint"]
+test = ["buildkite-test-collector", "docker", "grpcio-tools (>=1.44.0)", "grpcio-tools (>=1.44.0,<1.48.0)", "mock (==3.0.5)", "objgraph", "pytest (==7.0.1)", "pytest-cov (==2.10.1)", "pytest-dependency (==0.5.1)", "pytest-mock (==3.3.1)", "pytest-rerunfailures (==10.0)", "pytest-runner (==5.2)", "pytest-xdist (==2.1.0)", "responses", "snapshottest (==0.6.0)", "tox (==3.25.0)", "yamllint"]
 
 [[package]]
 name = "dagster-docker"
-version = "0.19.6"
+version = "0.19.7"
 description = "A Dagster integration for docker"
 category = "main"
 optional = false
 python-versions = "*"
 files = [
-    {file = "dagster-docker-0.19.6.tar.gz", hash = "sha256:b76adc30b29b4aa8d91088479c20e2e947d8971cd2677bda29809df63443936c"},
-    {file = "dagster_docker-0.19.6-py3-none-any.whl", hash = "sha256:eee061f40d87f7fb3ad24bcf787b05ab52e8e40f1f238ad48903aa3f8e260a8c"},
+    {file = "dagster-docker-0.19.7.tar.gz", hash = "sha256:ea32eca2208e12bbecc8e7f593fed679dae1657df516153c75a7a8ab4d753448"},
+    {file = "dagster_docker-0.19.7-py3-none-any.whl", hash = "sha256:cebac0f1e69b98854d217865461fafb262b28ed734c080c34a03360ebcbbbe42"},
 ]
 
 [package.dependencies]
-dagster = "1.3.6"
+dagster = "1.3.7"
 docker = "*"
 docker-image-py = "*"
 urllib3 = "<2"
 
 [[package]]
 name = "dagster-graphql"
-version = "1.3.6"
+version = "1.3.7"
 description = "The GraphQL frontend to python dagster."
 category = "main"
 optional = false
 python-versions = "*"
 files = [
-    {file = "dagster-graphql-1.3.6.tar.gz", hash = "sha256:ffc88e00e89ac588061425b29969a5b9f6089ce1342e3960e82771c91c3192c6"},
-    {file = "dagster_graphql-1.3.6-py3-none-any.whl", hash = "sha256:4fc37debf452302129fef10a7363452e6b7f6f047e582b15340de15d3e17cc68"},
+    {file = "dagster-graphql-1.3.7.tar.gz", hash = "sha256:fa91615282684c5df9eac8bc4d7c7560f82f602238f0b932341e1f06df86c0f3"},
+    {file = "dagster_graphql-1.3.7-py3-none-any.whl", hash = "sha256:07b341ea28f58189b5e5439e535b3a690a6fc26732fae3edb56ff873a305671b"},
 ]
 
 [package.dependencies]
-dagster = "1.3.6"
+dagster = "1.3.7"
 gql = {version = ">=3.0.0", extras = ["requests"]}
 graphene = ">=3"
 requests = "*"
@@ -342,18 +345,18 @@ urllib3 = "<2.0.0"
 
 [[package]]
 name = "dagster-postgres"
-version = "0.19.6"
+version = "0.19.7"
 description = "A Dagster integration for postgres"
 category = "main"
 optional = false
 python-versions = "*"
 files = [
-    {file = "dagster-postgres-0.19.6.tar.gz", hash = "sha256:309c83397ff3f0b6542c06dc92b0c4c3291e7325c48f2b130edadfb49cd1cfef"},
-    {file = "dagster_postgres-0.19.6-py3-none-any.whl", hash = "sha256:c67ca6255267fb0385cb45f01d5e829fecd478a622c992e4eac1047412268264"},
+    {file = "dagster-postgres-0.19.7.tar.gz", hash = "sha256:7fd15bfcaeccb25cf5bc9b5f8a66c9d8fdca55058b913bcff5a01623afc5908b"},
+    {file = "dagster_postgres-0.19.7-py3-none-any.whl", hash = "sha256:3d8f21d2668b80ca72871521b3d8ec737a50d790833a7d98a5579995599f18bc"},
 ]
 
 [package.dependencies]
-dagster = "1.3.6"
+dagster = "1.3.7"
 psycopg2-binary = "*"
 
 [[package]]
@@ -1215,6 +1218,22 @@ dev = ["pre-commit", "tox"]
 testing = ["pytest", "pytest-benchmark"]
 
 [[package]]
+name = "postgres"
+version = "4.0"
+description = "postgres is a high-value abstraction over psycopg2."
+category = "main"
+optional = false
+python-versions = "*"
+files = [
+    {file = "postgres-4.0-py2.py3-none-any.whl", hash = "sha256:d81f757acbde2ca12785b8a3d44c39f1e49782963e84eb67d3e029ad67d6b1d3"},
+    {file = "postgres-4.0.tar.gz", hash = "sha256:67c57de10c0d39cd5e3437eef7ac895b2b53747603b3edcd261dedec5ac04d4c"},
+]
+
+[package.dependencies]
+psycopg2-binary = ">=2.8"
+psycopg2-pool = "*"
+
+[[package]]
 name = "protobuf"
 version = "4.23.2"
 description = ""
@@ -1335,6 +1354,21 @@ files = [
     {file = "psycopg2_binary-2.9.6-cp39-cp39-win32.whl", hash = "sha256:c3dba7dab16709a33a847e5cd756767271697041fbe3fe97c215b1fc1f5c9848"},
     {file = "psycopg2_binary-2.9.6-cp39-cp39-win_amd64.whl", hash = "sha256:f6a88f384335bb27812293fdb11ac6aee2ca3f51d3c7820fe03de0a304ab6249"},
 ]
+
+[[package]]
+name = "psycopg2-pool"
+version = "1.1"
+description = "Proper pooling of psycopg2 connections"
+category = "main"
+optional = false
+python-versions = ">= 2.7, != 3.0.*, != 3.1.*, != 3.2.*, != 3.3.*, != 3.4.*"
+files = [
+    {file = "psycopg2-pool-1.1.tar.gz", hash = "sha256:de88615c24ddfc7ee314c566976cfed4bbb009211255f2773ea09e5f938ff400"},
+    {file = "psycopg2_pool-1.1-py2.py3-none-any.whl", hash = "sha256:529c4100db56a3522cf680ce8d89e71511e37c7e0b1f120ce0dde0f13c6e5844"},
+]
+
+[package.dependencies]
+psycopg2-binary = "*"
 
 [[package]]
 name = "pydantic"
@@ -2319,4 +2353,4 @@ multidict = ">=4.0"
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "88b6e6559f6b8f896fe3303ff10061a4c0561c0261827abed43206846db789f4"
+content-hash = "967a8bb5aeaa773ab51b26db0349ec5148d8d953e845dcb1bad4835200912a33"

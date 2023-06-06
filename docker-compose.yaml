@@ -74,11 +74,11 @@ services:
     build:
       context: .
       dockerfile: ./Dockerfile_dagster
+    container_name: docker_example_daemon
+    restart: on-failure
     entrypoint:
       - dagster-daemon
       - run
-    container_name: docker_example_daemon
-    restart: on-failure
     environment:
       DAGSTER_POSTGRES_HOST: docker_example_postgresql
       DAGSTER_POSTGRES_USER: ${DAGSTER_POSTGRES_USER}
